@@ -1,0 +1,24 @@
+# SINTAXE BÁSICA DO PYTHON
+
+## VARIÁVEIS E TIPOS DE DADOS
+```python
+# Inteiro
+idade = 25
+
+# Float (ponto flutuante)
+altura = 1.75
+
+# String (texto)
+nome = "Maria"
+
+# Boolean (lógico)
+estudante = True
+
+# Lista
+numeros = [1, 2, 3, 4, 5]
+
+# Tupla (imutável)
+coordenadas = (10, 20)
+
+# Dicionário
+pessoa = {"nome": "João", "idade": 30}

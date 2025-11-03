@@ -1,0 +1,34 @@
+# FUNÇÕES E MODULARIZAÇÃO
+
+## FUNÇÕES BÁSICAS
+```python
+# Função sem retorno
+def cumprimentar(nome):
+    print(f"Olá, {nome}!")
+
+# Função com retorno
+def somar(a, b):
+    return a + b
+
+# Função com parâmetro padrão
+def potencia(base, expoente=2):
+    return base ** expoente
+
+# Variável global
+contador_global = 0
+
+def incrementar():
+    global contador_global
+    contador_global += 1
+    contador_local = 10  # Só existe dentro da função
+    return contador global
+
+def calcular_estatisticas(numeros):
+    media = sum(numeros) / len(numeros)
+    maior = max(numeros)
+    menor = min(numeros)
+    return media, maior, menor
+
+# Chamada com desempacotamento
+notas = [7.5, 8.0, 6.5, 9.0]
+media, maior, menor = calcular_estatisticas(notas)

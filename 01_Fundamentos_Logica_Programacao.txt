@@ -1,0 +1,44 @@
+# FUNDAMENTOS DE LÓGICA DE PROGRAMAÇÃO
+
+## CONCEITOS BÁSICOS
+- **Algoritmo**: Sequência finita de passos para resolver um problema
+- **Variável**: Espaço na memória para armazenar dados
+- **Tipo de Dados**: Classificação do dado (inteiro, texto, booleano, etc.)
+- **Estrutura de Controle**: Comandos que alteram o fluxo do programa
+
+## LÓGICA COMPUTACIONAL
+### Operadores Lógicos
+- **E (AND)**: Verdadeiro apenas se ambos forem verdadeiros
+- **OU (OR)**: Verdadeiro se pelo menos um for verdadeiro
+- **NÃO (NOT)**: Inverte o valor lógico
+
+### Tabela Verdade
+A | B | A AND B | A OR B | NOT A
+---------------------------------
+V | V |    V    |   V    |   F
+V | F |    F    |   V    |   F  
+F | V |    F    |   V    |   V
+F | F |    F    |   F    |   V
+
+## PENSAMENTO ALGORÍTMICO
+### Passos para Resolver Problemas:
+1. **Compreensão**: Entender completamente o problema
+2. **Decomposição**: Quebrar em problemas menores
+3. **Padrões**: Identificar padrões repetitivos
+4. **Abstração**: Ignorar detalhes irrelevantes
+5. **Algoritmo**: Definir os passos da solução
+
+### Exemplo: Média de Três Números
+Problema: Calcular a média de três números
+
+Pensamento algorítmico:
+1. Receber três números como entrada
+2. Somar os três números
+3. Dividir a soma por 3
+4. Retornar o resultado
+
+## FLUXOGRAMA - SÍMBOLOS BÁSICOS
+- **Oval**: Início/Fim
+- **Retângulo**: Processamento
+- **Losango**: Decisão
+- **Paralelogramo**: Entrada/Saída

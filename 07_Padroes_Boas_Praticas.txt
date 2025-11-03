@@ -1,0 +1,120 @@
+# PADRÕES E BOAS PRÁTICAS
+
+## NOMENCLATURA
+```python
+# ✅ CORRETO
+nome_completo = "João Silva"
+idade_usuario = 25
+calcular_media = lambda x: sum(x)/len(x)
+
+# ❌ EVITAR
+n = "João Silva"       # Pouco descritivo
+a = 25                 # Sem significado
+cm = lambda x: sum(x)/len(x)  # Abreviação obscura
+
+# Try-Except básico
+try:
+    numero = int(input("Digite um número: "))
+    resultado = 10 / numero
+except ValueError:
+    print("Erro: Digite um número válido!")
+except ZeroDivisionError:
+    print("Erro: Não é possível dividir por zero!")
+except Exception as e:
+    print(f"Erro inesperado: {e}")
+
+def calcular_imc(peso, altura):
+    """
+    Calcula o Índice de Massa Corporal (IMC)
+    
+    Args:
+        peso (float): Peso em quilogramas
+        altura (float): Altura em metros
+        
+    Returns:
+        float: Valor do IMC calculado
+        str: Classificação do IMC
+    """
+    imc = peso / (altura ** 2)
+    
+    if imc < 18.5:
+        classificacao = "Abaixo do peso"
+    elif imc < 25:
+        classificacao = "Peso normal"
+    elif imc < 30:
+        classificacao = "Sobrepeso"
+    else:
+        classificacao = "Obesidade"
+        
+    return imc, classificacao
+
+Single Responsibility: Cada função faz uma coisa só
+
+Open/Closed: Aberto para extensão, fechado para modificação
+
+DRY (Don't Repeat Yourself): Evitar código duplicado
+
+
+---
+
+**[file name]: 08_Exemplo_Aplicacao_Completa.txt**
+```txt
+# EXEMPLO DE APLICAÇÃO COMPLETA
+
+## SISTEMA DE GERENCIAMENTO DE ALUNOS
+```python
+class GerenciadorAlunos:
+    def __init__(self):
+        self.alunos = []
+    
+    def adicionar_aluno(self, nome, notas):
+        """Adiciona um aluno com suas notas"""
+        aluno = {
+            "nome": nome,
+            "notas": notas,
+            "media": self._calcular_media(notas),
+            "situacao": self._verificar_situacao(notas)
+        }
+        self.alunos.append(aluno)
+        print(f"Aluno {nome} adicionado com sucesso!")
+    
+    def _calcular_media(self, notas):
+        """Calcula a média das notas (método privado)"""
+        return sum(notas) / len(notas) if notas else 0
+    
+    def _verificar_situacao(self, notas):
+        """Verifica a situação do aluno"""
+        media = self._calcular_media(notas)
+        return "Aprovado" if media >= 6 else "Reprovado"
+    
+    def listar_alunos(self):
+        """Lista todos os alunos"""
+        print("\n--- LISTA DE ALUNOS ---")
+        for aluno in self.alunos:
+            print(f"Nome: {aluno['nome']}")
+            print(f"Média: {aluno['media']:.2f}")
+            print(f"Situação: {aluno['situacao']}")
+            print("-" * 20)
+    
+    def buscar_aluno(self, nome):
+        """Busca aluno pelo nome"""
+        for aluno in self.alunos:
+            if aluno["nome"].lower() == nome.lower():
+                return aluno
+        return None
+
+# USO DO SISTEMA
+if __name__ == "__main__":
+    sistema = GerenciadorAlunos()
+    
+    # Adicionando alunos
+    sistema.adicionar_aluno("Ana Silva", [7.5, 8.0, 6.5])
+    sistema.adicionar_aluno("João Santos", [5.0, 4.5, 6.0])
+    
+    # Listando alunos
+    sistema.listar_alunos()
+    
+    # Buscando aluno específico
+    aluno = sistema.buscar_aluno("Ana Silva")
+    if aluno:
+        print(f"Encontrado: {aluno['nome']} - {aluno['situacao']}")

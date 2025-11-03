@@ -1,0 +1,74 @@
+# EXERCÍCIOS PROGRESSIVOS
+
+## NÍVEL INICIANTE
+```python
+# 1. Calculadora Básica
+def calculadora(a, b, operacao):
+    if operacao == '+':
+        return a + b
+    elif operacao == '-':
+        return a - b
+    elif operacao == '*':
+        return a * b
+    elif operacao == '/':
+        return a / b if b != 0 else "Erro: divisão por zero"
+
+# 2. Verificador de Número Par/Ímpar
+def verificar_par_impar(numero):
+    return "Par" if numero % 2 == 0 else "Ímpar"
+
+# 3. Contador de Vogais
+def contar_vogais(texto):
+    vogais = "aeiouAEIOU"
+    return sum(1 for letra in texto if letra in vogais)
+
+# 4. Busca em Lista
+def buscar_elemento(lista, elemento):
+    for i, item in enumerate(lista):
+        if item == elemento:
+            return i
+    return -1
+
+# 5. Ordenação Simples (Bubble Sort)
+def bubble_sort(lista):
+    n = len(lista)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+    return lista
+
+# 6. Fibonacci Recursivo
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+# 7. Validador de CPF (simplificado)
+def validar_cpf(cpf):
+    # Remove caracteres não numéricos
+    cpf = ''.join(filter(str.isdigit, cpf))
+    
+    if len(cpf) != 11:
+        return False
+    
+    # Verifica se todos os dígitos são iguais
+    if cpf == cpf[0] * 11:
+        return False
+    
+    # Cálculo dos dígitos verificadores (implementar)
+    return True
+
+# 8. Busca Binária
+def busca_binaria(lista, elemento):
+    esquerda, direita = 0, len(lista) - 1
+    
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if lista[meio] == elemento:
+            return meio
+        elif lista[meio] < elemento:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+    return -1

@@ -1,0 +1,47 @@
+# ESTRUTURAS DE DADOS EM PYTHON
+
+## LISTAS - OPERAÇÕES COMUNS
+```python
+# Criando listas
+numeros = [1, 2, 3, 4, 5]
+vazia = []
+
+# Acessando elementos
+primeiro = numeros[0]        # 1
+ultimo = numeros[-1]         # 5
+pedaco = numeros[1:4]        # [2, 3, 4]
+
+# Métodos úteis
+numeros.append(6)           # Adiciona no final
+numeros.insert(0, 0)        # Insere na posição
+removido = numeros.pop()    # Remove e retorna o último
+
+# Criando dicionários
+pessoa = {
+    "nome": "Ana",
+    "idade": 25,
+    "cidade": "São Paulo"
+}
+
+# Acessando valores
+nome = pessoa["nome"]
+idade = pessoa.get("idade", 0)  # Com valor padrão
+
+# Adicionando/Modificando
+pessoa["profissao"] = "Engenheira"
+pessoa["idade"] = 26
+
+# Iterando
+for chave, valor in pessoa.items():
+    print(f"{chave}: {valor}")
+
+# Conjuntos não permitem duplicatas
+frutas = {"maçã", "banana", "laranja", "maçã"}
+print(frutas)  # {"maçã", "banana", "laranja"}
+
+# Operações de conjunto
+A = {1, 2, 3}
+B = {3, 4, 5}
+uniao = A | B          # {1, 2, 3, 4, 5}
+intersecao = A & B     # {3}
+diferenca = A - B      # {1, 2}

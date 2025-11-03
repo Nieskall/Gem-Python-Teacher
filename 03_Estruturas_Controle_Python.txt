@@ -1,0 +1,52 @@
+# ESTRUTURAS DE CONTROLE EM PYTHON
+
+## CONDICIONAIS
+```python
+# IF simples
+idade = 18
+if idade >= 18:
+    print("Maior de idade")
+
+# IF-ELSE
+nota = 7.5
+if nota >= 6:
+    print("Aprovado")
+else:
+    print("Reprovado")
+
+# IF-ELIF-ELSE
+temperatura = 25
+if temperatura > 30:
+    print("Muito quente")
+elif temperatura > 20:
+    print("Agradável")
+else:
+    print("Frio")
+
+# FOR loop - iterando sobre lista
+frutas = ["maçã", "banana", "laranja"]
+for fruta in frutas:
+    print(fruta)
+
+# FOR com range
+for i in range(5):  # 0, 1, 2, 3, 4
+    print(i)
+
+# WHILE loop
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1  # Incremento
+
+# BREAK - interrompe o loop
+for numero in range(10):
+    if numero == 5:
+        break
+    print(numero)
+
+# CONTINUE - pula para próxima iteração
+for numero in range(5):
+    if numero == 2:
+        continue
+    print(numero)
+
