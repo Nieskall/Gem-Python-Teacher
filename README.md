@@ -37,7 +37,7 @@ Este projeto é feito para ser executado localmente, demonstrando a interação 
 
 ### ▶️ Como Testar
 
-1.  Clone o repositório: `git clone [seu-link-aqui]`
+1.  Clone o repositório: `git clone https://github.com/Nieskall/Gem-Python-Teacher`
 2.  Defina sua chave de API como variável de ambiente (Obrigatório para segurança):
     ```bash
     export GEMINI_API_KEY='SUA_CHAVE_AQUI'
